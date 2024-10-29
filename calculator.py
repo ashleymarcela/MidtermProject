@@ -37,7 +37,9 @@ def repl():
             logger.warning(f"Unknown command '{operation}'")
             continue
 
-        print(f"Result: {result}")
+
+        history_manager.add_record(operation, num1, num2, result)
+         print(f"Result: {result}")
 
 if __name__ == "__main__":
     repl()
