@@ -1,8 +1,9 @@
 import logging
 import sys
-from plugins import add, subtract
+from plugins.add import add
+from plugins.subtract import subtract
 
-loggin.basicCinfig(level=logging.INFO)
+logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 def repl():
