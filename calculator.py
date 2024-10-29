@@ -2,6 +2,7 @@ import logging
 import sys
 from plugins.add import add
 from plugins.subtract import subtract
+from history import HistoryManager
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
