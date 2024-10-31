@@ -7,7 +7,6 @@ class HistoryManager:
 
     def add_record(self, operation, operand1, operand2, result):
         new_record = {"operation": operation, "operand1": operand1, "operand2": operand2, "result": result}
-        self.history = pd.concat([self.history, pd.DataFrame([new_record])], ignore_index = True)
 
         if self.history.empty:
             self.history = pd.DataFrame([new_record])
