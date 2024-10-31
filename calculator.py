@@ -53,6 +53,16 @@ def repl():
             logger.warning(f"Unknown command '{operation}'")
             continue
 
+        if operation == 'add':
+            result = add(num1, num2)
+            logger.info(f"Performed addition: {num1} + {num2} = {result}")
+        elif operation == 'subtract':
+            result = subtract(num1, num2)
+            logger.info(f"Performed subtraction: {num1} - {num2} = {result}")
+        else:
+            logger.warning(f"Unknown command '{operation}'")
+            continue
+
 
         history_manager.add_record(operation, num1, num2, result)
         history_manager.save_history()
