@@ -8,6 +8,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 def repl():
+    history_manager = HistoryManager()
     print("Welcome to the Advanced Python Calculator! Type 'exit' to quit.")
     while True:
         command = input(">>> ").strip()
