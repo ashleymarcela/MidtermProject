@@ -9,6 +9,7 @@ logger = logging.getLogger(__name__)
 
 def repl():
     history_manager = HistoryManager()
+    history_manager.load_history()
     print("Welcome to the Advanced Python Calculator! Type 'exit' to quit.")
     while True:
         command = input(">>> ").strip()
