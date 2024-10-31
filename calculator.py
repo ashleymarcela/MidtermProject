@@ -11,6 +11,9 @@ def repl():
     history_manager = HistoryManager()
     history_manager.load_history()
     print("Welcome to the Advanced Python Calculator! Type 'exit' to quit.")
+    print("Enter commands in the format: operation num1 num2 (e.g., 'add 5 10')")
+    print("Type 'history' to view calculation history")
+    
     while True:
         command = input(">>> ").strip()
 
