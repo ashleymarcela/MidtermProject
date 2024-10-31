@@ -4,12 +4,17 @@ from plugins.add import add
 from plugins.subtract import subtract
 from history import HistoryManager
 
+logging.basicConfig(
+    level = logging.INFO,
+    format = '%(asctime)s - %(levelname)s - %(message)s'
+)
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 def repl():
     history_manager = HistoryManager()
     history_manager.load_history()
+    logger.info("History loaded.")
     print("Welcome to the Advanced Python Calculator! Type 'exit' to quit.")
     print("Enter commands in the format: operation num1 num2 (e.g., 'add 5 10')")
     print("Type 'history' to view calculation history")
