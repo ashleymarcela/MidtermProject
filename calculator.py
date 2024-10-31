@@ -21,6 +21,12 @@ def repl():
             print('Goodbye!')
             break
 
+        elif command == 'history':
+            history = history_manager.display_history()
+            print("Calculation History: ")
+            print(history if not history.empty else "No history available.")
+            continue
+
         parts = command.split()
         if len(parts) != 3:
             logger.warning("Invalid command format. Use 'operation num1 num2'")
@@ -44,6 +50,7 @@ def repl():
 
 
         history_manager.add_record(operation, num1, num2, result)
+        history_manager.save_history()
         print(f"Result: {result}")
 
 if __name__ == "__main__":
