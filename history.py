@@ -9,6 +9,11 @@ class HistoryManager:
         new_record = {"operation": operation, "operand1": operand1, "operand2": operand2, "result": result}
         self.history = pd.concat([self.history, pd.DataFrame([new_record])], ignore_index = True)
 
+        if self.history.empty:
+            self.history = pd.DataFrame([new_record])
+        else:
+            self.history = pd.concat([self.history, pd.DataFrame([new_record])], ignore_index = True)
+
     def save_history(self):
         self.history.to_csv(self.filename, index = False)
 
