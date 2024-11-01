@@ -17,6 +17,26 @@ def test_subtract():
     assert subtract(-1, -1) == 0.0, "Expected output: 0.0"
     assert subtract(2.5, 1.5) == 1.0, "Expected output: 4.0"
 
+def test_multiply():
+    '''Testing the multiply function using a variety of cases'''
+    assert multiply(2, 3) == 6.0, "Expected output: 6.0"
+    assert multiply(-1, 5) == -5.0, "Expect output: -5.0"
+    assert multiply(0, 100) == 0.0, "Expected output: 0.0"
+    assert multiply(1.5, 2) == 3.0, "Expected output: 3.0"
+
+def test_divide():
+    '''Testing the divide function using a variety of cases'''
+    assert divide(6, 3) == 2.0, "Expected output: 2.0"
+    assert divide(-6, 3) == -2.0, "Expect output: -2.0"
+    assert divide(0, 0) == 0.0, "Expected output: 0.0"
+    assert divide(1.5, 0.5) == 3.0, "Expected output: 3.0"
+
+    try:
+        divide(5,0)
+        assert False, "Expected ValueError for division by zero"
+    except ValueError:
+        pass
+
 def test_history_manager():
     '''Testing functionality of the HistoryManager class'''
     history_manager = HistoryManager()

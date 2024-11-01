@@ -2,6 +2,8 @@
 import logging
 from plugins.add import add
 from plugins.subtract import subtract
+from plugins.multiply import multiply
+from plugins.divide import divide
 from history import HistoryManager
 
 logging.basicConfig(
@@ -59,6 +61,12 @@ def repl():
         elif operation == 'subtract':
             result = subtract(num1, num2)
             logger.info("Performed subtraction: %f - %f = %f", num1, num2, result)
+        elif operation == 'multiply':
+             result = multiply(num1, num2)
+            logger.info("Performed multiplication: %f * %f = %f", num1, num2, result)
+        elif operation == 'multiply':
+             result = divide(num1, num2)
+            logger.info("Performed division: %f / %f = %f", num1, num2, result)        
         else:
             logger.warning("Unknown command '%s'", operation)
             continue
