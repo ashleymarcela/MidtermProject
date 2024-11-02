@@ -1,6 +1,8 @@
 '''File Responsible for unit testing the Advanced Python Calculator and the HistoryManager Class'''
 from plugins.add import add
 from plugins.subtract import subtract
+from plugins.multiply import multiply
+from plugins.divide import divide
 from history import HistoryManager
 
 def test_add():
@@ -28,7 +30,6 @@ def test_divide():
     '''Testing the divide function using a variety of cases'''
     assert divide(6, 3) == 2.0, "Expected output: 2.0"
     assert divide(-6, 3) == -2.0, "Expect output: -2.0"
-    assert divide(0, 0) == 0.0, "Expected output: 0.0"
     assert divide(1.5, 0.5) == 3.0, "Expected output: 3.0"
 
     try:

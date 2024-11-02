@@ -21,6 +21,7 @@ def repl():
     print("Welcome to the Advanced Python Calculator! Type 'exit' to quit.")
     print("Enter commands in the format: operation num1 num2 (e.g., 'add 5 10')")
     print("Type 'history' to view calculation history")
+
     while True:
         command = input(">>> ").strip()
 
@@ -46,14 +47,7 @@ def repl():
         except ValueError:
             logger.error("Please enter valid numbers for calculation.")
             continue
-
-        if operation == 'add':
-            result = add(num1, num2)
-        elif operation == 'subtract':
-            result = subtract(num1, num2)
-        else:
-            logger.warning("Unknown command '%s'", operation)
-            continue
+        logger.debug("Operation: %s, Num1: %f, Num2: %f", operation, num1, num2)
 
         if operation == 'add':
             result = add(num1, num2)
@@ -62,11 +56,15 @@ def repl():
             result = subtract(num1, num2)
             logger.info("Performed subtraction: %f - %f = %f", num1, num2, result)
         elif operation == 'multiply':
-             result = multiply(num1, num2)
+            result = multiply(num1, num2)
             logger.info("Performed multiplication: %f * %f = %f", num1, num2, result)
-        elif operation == 'multiply':
-             result = divide(num1, num2)
-            logger.info("Performed division: %f / %f = %f", num1, num2, result)        
+        elif operation == 'divide':
+            if num2 == 0:
+                logger.error('Cannot divide by zero.')
+                print("Error: Cannot divide by zero.")
+                continue
+            result = divide(num1, num2)
+            logger.info("Performed division: %f / %f = %f", num1, num2, result)
         else:
             logger.warning("Unknown command '%s'", operation)
             continue
