@@ -9,4 +9,4 @@ The calculator has a plugin architecture in addition to its main features, which
 The overall goal of this project is to create a versatile and easy-to-use calculator that can be improved over time while keeping an accurate log of user interactions.
 
 ##Advanced Python Calculator Tutorial
-https://drive.google.com/file/d/1to5P7txT2c-YVw1bPshJ7xb7Pmkdpvg3/view?usp=sharing
+https://drive.google.com/file/d/1to5P7txT2c-YVw1bPshJ7xb7Pmkdpvg3/view?usp=sharing 
